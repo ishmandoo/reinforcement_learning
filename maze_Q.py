@@ -42,7 +42,7 @@ class Maze:
                 return 0
             elif self.tileAt(movePos) == Tile.goal:
                 self.playerPos = movePos
-                self.gameWon = movePos
+                self.gameWon = True
                 return 1
             else:
                 return 0
