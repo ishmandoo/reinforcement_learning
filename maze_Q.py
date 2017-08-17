@@ -55,8 +55,8 @@ class QLearner:
         self.Q = np.zeros((self.maze.w, self.maze.h, 4))
         self.alpha = 0.1
         self.gamma = 0.9
-    def learn(self):
-        for n in range(1000):
+    def learn(self, n):
+        for r in range(n):
             while self.maze.gameWon == False:
                 i = randint(0,3)
                 self.updateQ(i)
@@ -93,7 +93,7 @@ class Tile:
 
 maze = Maze()
 learner = QLearner(maze)
-learner.learn()
+learner.learn(1000)
 
 maze.reset()
 while maze.gameWon == False:
