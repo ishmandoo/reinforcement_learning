@@ -10,10 +10,10 @@ class Maze:
         e = Tile.empty
         g = Tile.goal
         self.map = [
-            [e, e, b, e, g],
-            [e, e, b, e, e],
-            [b, e, b, e, b],
-            [e, e, e, e, e],
+            [e, e, e, b, g],
+            [e, b, e, b, e],
+            [e, b, e, e, e],
+            [e, b, b, b, b],
             [e, e, e, e, e],
         ]
         self.reset()
@@ -86,10 +86,10 @@ class Dir:
     moveOptions = [UP, RIGHT, DOWN, LEFT]
 
 class Tile:
-    player = 2
-    goal = 3
-    block = 1
-    empty = 0
+    player = 'p'
+    goal = 'g'
+    block = 'X'
+    empty = ' '
 
 maze = Maze()
 learner = QLearner(maze)
